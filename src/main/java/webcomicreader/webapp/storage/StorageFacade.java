@@ -2,6 +2,7 @@ package webcomicreader.webapp.storage;
 
 import webcomicreader.webapp.model.Comic;
 import webcomicreader.webapp.model.ObjectWithId;
+import webcomicreader.webapp.model.UserComic;
 
 import java.util.List;
 import java.util.Map;
@@ -24,9 +25,11 @@ public interface StorageFacade {
      * @param id the Id of the comic to retrieve
      * @return the Comic, or null if not found.
      */
-    public Comic getComic(String id);
+    public UserComic getComic(String id);
 
     public void createComic(String name);
+
+    public void updateUserComic(UserComicSetter userComic);
 
     public void updateOneField(ObjectWithId obj, String fieldName, String fieldValue);
 

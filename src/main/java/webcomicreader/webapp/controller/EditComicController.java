@@ -11,10 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import webcomicreader.webapp.model.Comic;
 import webcomicreader.webapp.storage.UserComicImpl;
 import webcomicreader.webapp.storage.SimpleDBStorage;
+import webcomicreader.webapp.storage.UserComicSetter;
 
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * This is a raw controller used for manually viewing and editing the data in the database.
@@ -38,17 +36,7 @@ public class EditComicController {
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
     public String updateComic(@PathVariable String id, @RequestBody MultiValueMap<String,String> fields) {
         System.out.println("DOING POST");
-        Map<String,String> fieldsToUpdate = new TreeMap<String,String>();
-        for (Map.Entry<String, List<String>> entry : fields.entrySet()) {
-            if (entry.getValue() == null || entry.getValue().size() == 0) {
-                continue;
-            }
-            if (entry.getValue().size() > 1) {
-                System.out.println("SHOULD LOG A WARNING: Got Multiple Values In POST.");
-            }
-            fieldsToUpdate.put(entry.getKey(), entry.getValue().get(0));
-        }
-        storage.updateSeveralFields(SimpleDBStorage.COMIC_DOMAIN, id, fieldsToUpdate);
-        return "redirect:/{id}";
+        storage.updateUserComic(new UserComicSetter(id, fields));
+        return "redirect:/viewComic/{id}";
     }
 }

@@ -7,7 +7,6 @@ import com.amazonaws.services.simpledb.AmazonSimpleDBClient;
 import com.amazonaws.services.simpledb.model.Attribute;
 import com.amazonaws.services.simpledb.model.CreateDomainRequest;
 import com.amazonaws.services.simpledb.model.GetAttributesRequest;
-import com.amazonaws.services.simpledb.model.GetAttributesResult;
 import com.amazonaws.services.simpledb.model.Item;
 import com.amazonaws.services.simpledb.model.PutAttributesRequest;
 import com.amazonaws.services.simpledb.model.ReplaceableAttribute;
@@ -118,6 +117,12 @@ public class SimpleDBStorage implements StorageFacade {
         List<Attribute> userComicAttributes = client.getAttributes(new GetAttributesRequest(USER_COMIC_DOMAIN, id)).getAttributes();
         List<Attribute> comicAttributes = comicAttributes(userComicAttributes);
         return new UserComicImpl(id, comicAttributes, userComicAttributes);
+    }
+
+    @Override
+    public void updateUserComic(UserComicSetter userComic) {
+        updateSeveralFields(USER_COMIC_DOMAIN, userComic.getId(), userComic.getUserComicFields());
+        updateSeveralFields(COMIC_DOMAIN, userComic.getComicId(), userComic.getComicFields());
     }
 
     /**

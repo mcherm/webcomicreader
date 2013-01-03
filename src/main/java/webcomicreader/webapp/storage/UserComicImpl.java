@@ -1,7 +1,6 @@
 package webcomicreader.webapp.storage;
 
 import com.amazonaws.services.simpledb.model.Attribute;
-import com.amazonaws.services.simpledb.model.Item;
 import webcomicreader.webapp.model.UserComic;
 
 import java.util.List;
