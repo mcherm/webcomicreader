@@ -1,9 +1,11 @@
 package webcomicreader.webapp.storage;
 
 import webcomicreader.webapp.model.Comic;
+import webcomicreader.webapp.model.ComicList;
 import webcomicreader.webapp.model.ObjectWithId;
 import webcomicreader.webapp.model.UserComic;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -16,9 +18,27 @@ public interface StorageFacade {
 
     /**
      * Retrieves all the comics in the datastore.
+     * # FIXME: Deprecated
      * @return the list of Comics.
      */
-    public List<Comic> getComics();
+    public List<UserComic> getComics();
+
+    /**
+     * Returns all lists for a given user.
+     *
+     * @param userId the id of the user to retrieve
+     * @return a collection of the ComicLists
+     */
+    public Collection<ComicList> getComicListsForUser(String userId);
+
+
+    /**
+     * Returns all UserComics for a given user.
+     *
+     * @param userId the id of the user to retrieve
+     * @return a map from userComicId to the UserComic
+     */
+    public Map<String,UserComic> getUserComicsForUser(String userId);
 
     /**
      * Retrieves a comic from the datastore, given its id.
@@ -27,13 +47,12 @@ public interface StorageFacade {
      */
     public UserComic getComic(String id);
 
-    public void createComic(String name);
-
+    /**
+     * Updates all values in a UserComic and also in the corresponding Comic to match
+     * the values passed in. Things not existing are created.
+     *
+     * @param userComic the values to use.
+     */
     public void updateUserComic(UserComicSetter userComic);
 
-    public void updateOneField(ObjectWithId obj, String fieldName, String fieldValue);
-
-    public void updateSeveralFields(ObjectWithId obj, Map<String,String> fieldsToUpdate);
-
-    public void updateSeveralFields(String domain, String id, Map<String,String> fieldsToUpdate);
 }

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import webcomicreader.webapp.model.Comic;
+import webcomicreader.webapp.model.UserComic;
 import webcomicreader.webapp.storage.StorageFacade;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class ComicListController {
 
     @RequestMapping("/comicList")
     public String comicList(Model model) {
-        List<Comic> comics = storage.getComics();
+        List<UserComic> comics = storage.getComics();
         model.addAttribute("comics", comics);
         return "comicList";
     }
