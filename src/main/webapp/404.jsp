@@ -11,10 +11,8 @@
     <link rel="shortcut icon" href="${ctx}/images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="${ctx}/styles/deliciouslyblue/theme.css" title="default" />
     <link rel="alternate stylesheet" type="text/css" href="${ctx}/styles/deliciouslygreen/theme.css" title="green" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/scriptaculous.js"></script>
-    <script type="text/javascript" src="${ctx}/scripts/stylesheetswitcher.js"></script>
-    <script type="text/javascript" src="${ctx}/scripts/global.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 </head>
 <body>
 <a name="top"></a>

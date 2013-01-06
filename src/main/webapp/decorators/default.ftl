@@ -9,13 +9,12 @@
     <meta http-equiv="Expires" content="0"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="shortcut icon" href="${base}/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="${base}/styles/deliciouslyblue/theme.css" title="default" />
     <link rel="alternate stylesheet" type="text/css" href="${base}/styles/deliciouslygreen/theme.css" title="green" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/scriptaculous.js"></script>
-    <script type="text/javascript" src="${base}/scripts/stylesheetswitcher.js"></script>
-    <script type="text/javascript" src="${base}/scripts/rsh.compressed.js"></script>
-    <script type="text/javascript" src="${base}/scripts/global.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <!-- <script type="text/javascript" src="${base}/scripts/some_script.js"></script> -->
     ${head}
 </head>
 <body>
