@@ -1,4 +1,4 @@
-package webcomicreader.webapp.storage;
+package webcomicreader.webapp.storage.simpledb;
 
 import com.amazonaws.services.simpledb.model.Attribute;
 import webcomicreader.webapp.model.UserComic;

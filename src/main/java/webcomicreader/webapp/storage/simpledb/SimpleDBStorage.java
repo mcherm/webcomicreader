@@ -1,4 +1,4 @@
-package webcomicreader.webapp.storage;
+package webcomicreader.webapp.storage.simpledb;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
@@ -14,10 +14,12 @@ import com.amazonaws.services.simpledb.model.ReplaceableAttribute;
 import com.amazonaws.services.simpledb.model.ReplaceableItem;
 import com.amazonaws.services.simpledb.model.SelectRequest;
 import com.amazonaws.services.simpledb.model.SelectResult;
-import webcomicreader.webapp.model.Comic;
 import webcomicreader.webapp.model.ComicList;
-import webcomicreader.webapp.model.ObjectWithId;
 import webcomicreader.webapp.model.UserComic;
+import webcomicreader.webapp.storage.StorageFacade;
+import webcomicreader.webapp.storage.UserComicSetter;
+import webcomicreader.webapp.storage.simpledb.ComicListImpl;
+import webcomicreader.webapp.storage.simpledb.UserComicImpl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -139,7 +141,7 @@ public class SimpleDBStorage implements StorageFacade {
     }
 
     @Override
-    public UserComic getComic(String userComicId) {
+    public UserComic getUserComic(String userComicId) {
         List<Attribute> userComicAttributes = client.getAttributes(new GetAttributesRequest(USER_COMIC_DOMAIN, userComicId)).getAttributes();
         List<Attribute> comicAttributes = comicAttributes(userComicId, userComicAttributes);
         return new UserComicImpl(userComicId, comicAttributes, userComicAttributes);

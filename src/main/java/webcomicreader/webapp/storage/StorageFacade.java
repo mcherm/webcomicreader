@@ -41,11 +41,11 @@ public interface StorageFacade {
     public Map<String,UserComic> getUserComicsForUser(String userId);
 
     /**
-     * Retrieves a comic from the datastore, given its id.
-     * @param id the Id of the comic to retrieve
-     * @return the Comic, or null if not found.
+     * Retrieves a user-comic from the datastore, given its id.
+     * @param id the Id of the user-comic to retrieve
+     * @return the UserComic, or null if not found.
      */
-    public UserComic getComic(String id);
+    public UserComic getUserComic(String id);
 
     /**
      * Updates all values in a UserComic and also in the corresponding Comic to match

@@ -77,17 +77,17 @@ public class UserComicSetter implements UserComic {
     }
 
     /**
-     * Package-private method used for writing this to the DB.
+     * Method used for writing this to the DB.
      * @return the ID of the corresponding comic.
      */
-    String getComicId() {
+    public String getComicId() {
         return id.substring(id.indexOf('-') + 1, id.length());
     }
 
     /**
-     * Package-private method used for writing this to the DB.
+     * Method used for writing this to the DB.
      */
-    Map<String,String> getComicFields() {
+    public Map<String,String> getComicFields() {
         return new TreeMap<String,String>() {{
             put("name", name);
             put("homepage", homepage);
@@ -95,9 +95,9 @@ public class UserComicSetter implements UserComic {
     }
 
     /**
-     * Package-private method used for writing this to the DB.
+     * Method used for writing this to the DB.
      */
-    Map<String,String> getUserComicFields() {
+    public Map<String,String> getUserComicFields() {
         return new TreeMap<String,String>() {{
             put("currentPosition", currentPosition);
         }};

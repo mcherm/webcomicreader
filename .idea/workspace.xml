@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="750011ca-3d11-443a-8a0b-293f6190f4c2" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Documents and Settings\rdg959\My Documents\Personal\Programming\WebComicReader_2\webcomicreader\src\main\webapp\scripts\global.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Documents and Settings\rdg959\My Documents\Personal\Programming\WebComicReader_2\webcomicreader\src\main\webapp\scripts\rsh.compressed.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Documents and Settings\rdg959\My Documents\Personal\Programming\WebComicReader_2\webcomicreader\src\main\webapp\scripts\stylesheetswitcher.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/404.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/404.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/decorators/default.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/decorators/default.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/userHomepage.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/userHomepage.ftl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/ComicImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/ComicListImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/TempMemoryStorage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/UserComicImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/UserImpl.java" />
+      <change type="MOVED" beforePath="C:\Documents and Settings\rdg959\My Documents\Personal\Programming\WebComicReader_2\webcomicreader\src\main\java\webcomicreader\webapp\storage\ComicListImpl.java" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/simpledb/ComicListImpl.java" />
+      <change type="MOVED" beforePath="C:\Documents and Settings\rdg959\My Documents\Personal\Programming\WebComicReader_2\webcomicreader\src\main\java\webcomicreader\webapp\storage\SimpleDBStorage.java" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/simpledb/SimpleDBStorage.java" />
+      <change type="MOVED" beforePath="C:\Documents and Settings\rdg959\My Documents\Personal\Programming\WebComicReader_2\webcomicreader\src\main\java\webcomicreader\webapp\storage\UserComicImpl.java" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/simpledb/UserComicImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/EditComicController.java" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/EditComicController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/StorageFacade.java" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/StorageFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/UserComicSetter.java" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/UserComicSetter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/ViewComicController.java" afterPath="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/ViewComicController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webcomicreader.iws" />
@@ -20,36 +27,38 @@
     <file path="/Comic.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357099265406" ignored="false" />
     <file path="/comicList.ftl" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1356987067578" ignored="false" />
     <file path="/pom.xml" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1356975046187" ignored="false" />
-    <file path="/StorageFacade.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357271902218" ignored="false" />
+    <file path="/StorageFacade.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357588115073" ignored="false" />
     <file path="/PullOnDemandCollection.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1356982532718" ignored="false" />
-    <file path="/ComicImpl.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357049692500" ignored="false" />
+    <file path="/ComicImpl.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357584039263" ignored="false" />
     <file path="/a.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357178807187" ignored="false" />
     <file path="/ObjectWithId.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1356989390265" ignored="false" />
-    <file path="/SimpleDBStorage.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357272022812" ignored="false" />
+    <file path="/SimpleDBStorage.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357586846957" ignored="false" />
     <file path="/applicationContext-resources.xml" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1356984516093" ignored="false" />
-    <file path="/applicationContext.xml" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1356984989796" ignored="false" />
-    <file path="/ViewComicController.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1356986577890" ignored="false" />
+    <file path="/applicationContext.xml" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357588460613" ignored="false" />
+    <file path="/ViewComicController.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357588302288" ignored="false" />
     <file path="/comicDetails.ftl" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357100911500" ignored="false" />
-    <file path="/EditComicController.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357247124906" ignored="false" />
+    <file path="/EditComicController.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357588754180" ignored="false" />
     <file path="/editComicRaw.ftl" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1356990481343" ignored="false" />
     <file path="/editEntity.ftl" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357179773578" ignored="false" />
     <file path="/UserComic.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357097989609" ignored="false" />
-    <file path="/UserComicImpl.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357099401734" ignored="false" />
+    <file path="/UserComicImpl.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357583988507" ignored="false" />
     <file path="/fragment.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357100693109" ignored="false" />
     <file path="/AddComicController.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357177760109" ignored="false" />
     <file path="/default.ftl" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357432326812" ignored="false" />
     <file path="$MAVEN_REPOSITORY$/org/appfuse/appfuse-service/2.2.2-SNAPSHOT/appfuse-service-2.2.2-SNAPSHOT.jar!/applicationContext-service.xml" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357241789390" ignored="false" />
     <file path="$MAVEN_REPOSITORY$/org/appfuse/appfuse-hibernate/2.2.2-SNAPSHOT/appfuse-hibernate-2.2.2-SNAPSHOT.jar!/applicationContext-dao.xml" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357241789390" ignored="false" />
-    <file path="/Dummy.txt" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357431349406" ignored="false" />
-    <file path="/UserComicSetter.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357248199359" ignored="false" />
+    <file path="/Dummy.txt" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357581858060" ignored="false" />
+    <file path="/UserComicSetter.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357583026946" ignored="false" />
     <file path="/Ordering.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357250941453" ignored="false" />
     <file path="/OrderingImpl.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357250970328" ignored="false" />
     <file path="/UserHomepageController.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357272734421" ignored="false" />
-    <file path="/ComicList.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357270264828" ignored="false" />
-    <file path="/userHomepage.ftl" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357438123421" ignored="false" />
-    <file path="/ComicListImpl.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357271679468" ignored="false" />
+    <file path="/ComicList.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357586421165" ignored="false" />
+    <file path="/userHomepage.ftl" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357485935625" ignored="false" />
+    <file path="/ComicListImpl.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357586383874" ignored="false" />
     <file path="/ComicListController.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357272051687" ignored="false" />
     <file path="/404.jsp" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357432383812" ignored="false" />
+    <file path="/TempMemoryStorage.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357588134541" ignored="false" />
+    <file path="/UserImpl.java" changelist="750011ca-3d11-443a-8a0b-293f6190f4c2" time="1357584221258" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +74,22 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/EditComicController.java" line="2" class="EditComicController.java" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -99,7 +124,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -109,24 +133,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="default.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/decorators/default.ftl">
+      <file leaf-file-name="SimpleDBStorage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/simpledb/SimpleDBStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="963" selection-end="963" vertical-scroll-proportion="-7.4615383">
+            <state line="33" column="0" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userHomepage.ftl" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/userHomepage.ftl">
+      <file leaf-file-name="applicationContext.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="533" selection-end="533" vertical-scroll-proportion="0.39273927">
+            <state line="23" column="0" selection-start="1152" selection-end="1152" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TempMemoryStorage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/TempMemoryStorage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="28" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2354#2365#0" expanded="true" />
+                <element signature="e#2643#2654#0" expanded="true" />
+                <element signature="e#2869#2887#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewComicController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/ViewComicController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditComicController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/EditComicController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="645" selection-end="645" vertical-scroll-proportion="0.22435898">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StorageFacade.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/StorageFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="0" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComicListImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/ComicListImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="0" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComicImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/ComicImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="8" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/UserImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="27" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComicListImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/simpledb/ComicListImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,22 +252,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/editEntity.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/UserComicImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/EditComicController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/UserComicSetter.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/model/Ordering.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/OrderingImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/model/ComicList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/ComicListImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/StorageFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/SimpleDBStorage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/ComicListController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/UserHomepageController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/404.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/decorators/default.ftl" />
         <option value="$PROJECT_DIR$/src/main/webapp/userHomepage.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/SimpleDBStorage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/TempMemoryStorage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/UserComicSetter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/UserComicImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/ComicImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/UserImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/ComicListImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/model/ComicList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/simpledb/ComicListImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/simpledb/SimpleDBStorage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/StorageFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/TempMemoryStorage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/ViewComicController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/EditComicController.java" />
       </list>
     </option>
   </component>
@@ -226,6 +329,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -255,80 +359,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webcomicreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webcomicreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webcomicreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webcomicreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webcomicreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webcomicreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="decorators" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -432,7 +462,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tempmemory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -462,7 +496,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simpledb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcomicreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcomicreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -482,7 +550,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -824,7 +891,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1374" height="776" extended-state="0" />
+    <frame x="-4" y="-4" width="1374" height="776" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -847,11 +914,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26866764" sideWeight="0.6229508" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21522693" sideWeight="0.6214605" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3785395" sideWeight="0.5651537" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21522693" sideWeight="0.51266766" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48733234" sideWeight="0.5651537" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -915,6 +982,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userHomepage.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="39" selection-start="636" selection-end="636" vertical-scroll-proportion="0.44884488">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/OrderingImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="14" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0">
@@ -924,103 +998,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/comicList.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/UserComicSetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="191" vertical-scroll-proportion="0.0" />
+        <state line="79" column="8" selection-start="2302" selection-end="2302" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/model/ComicList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/ComicImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="400" selection-end="400" vertical-scroll-proportion="0.4744186">
+        <state line="23" column="8" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/ComicListImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/model/Ordering.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/UserComicImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="266" selection-end="266" vertical-scroll-proportion="0.31627908">
+        <state line="9" column="0" selection-start="242" selection-end="242" vertical-scroll-proportion="0.2451923">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/ComicListImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/UserImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0">
+        <state line="14" column="27" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/model/ComicList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="400" selection-end="400" vertical-scroll-proportion="0.46314102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/simpledb/ComicListImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/StorageFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="20" selection-start="697" selection-end="697" vertical-scroll-proportion="0.33333334">
+        <state line="55" column="0" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/SimpleDBStorage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/tempmemory/TempMemoryStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="0" selection-start="8125" selection-end="8125" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/ComicListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/ViewComicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="41" selection-start="622" selection-end="635" vertical-scroll-proportion="0.719697">
+        <state line="85" column="28" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2354#2365#0" expanded="true" />
+            <element signature="e#2643#2654#0" expanded="true" />
+            <element signature="e#2869#2887#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/blank.htm">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/comicDetails.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/UserHomepageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/ViewComicController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1874" selection-end="1874" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1143#1167#0" expanded="true" />
-            <element signature="e#1278#1289#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/404.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="834" selection-end="834" vertical-scroll-proportion="-3.4230769">
+        <state line="7" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/decorators/default.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/storage/simpledb/SimpleDBStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="963" selection-end="963" vertical-scroll-proportion="-7.4615383">
+        <state line="33" column="0" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userHomepage.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="533" selection-end="533" vertical-scroll-proportion="0.39273927">
+        <state line="23" column="0" selection-start="1152" selection-end="1152" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/webcomicreader/webapp/controller/EditComicController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="645" selection-end="645" vertical-scroll-proportion="0.22435898">
           <folding />
         </state>
       </provider>

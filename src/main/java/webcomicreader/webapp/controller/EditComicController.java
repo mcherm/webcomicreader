@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import webcomicreader.webapp.model.Comic;
-import webcomicreader.webapp.storage.UserComicImpl;
-import webcomicreader.webapp.storage.SimpleDBStorage;
+import webcomicreader.webapp.model.UserComic;
+import webcomicreader.webapp.storage.StorageFacade;
+import webcomicreader.webapp.storage.simpledb.UserComicImpl;
 import webcomicreader.webapp.storage.UserComicSetter;
 
 
@@ -21,12 +21,12 @@ import webcomicreader.webapp.storage.UserComicSetter;
 @RequestMapping("/editComic")
 public class EditComicController {
     @Autowired
-    private SimpleDBStorage storage;
+    private StorageFacade storage;
 
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String viewComic(@PathVariable String id, Model model) {
-        Comic comic = storage.getComic(id);
+        UserComic comic = storage.getUserComic(id);
 
         model.addAttribute("id", id);
         model.addAttribute("fields", ((UserComicImpl) comic).getAllFields());
