@@ -42,7 +42,7 @@ public class UserHomepageController {
                 }
                 listUserComics.add(userComic);
             }
-            comicListComics.put(comicList.getTagName(), listUserComics);
+            comicListComics.put(comicList.getId(), listUserComics);
         }
         model.addAttribute("comicListComics", comicListComics);
         return "userHomepage";

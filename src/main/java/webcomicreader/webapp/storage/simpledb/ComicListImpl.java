@@ -12,6 +12,7 @@ import java.util.List;
  * A ComicList retrieved from storage.
  */
 public class ComicListImpl implements ComicList {
+    private final String id;
     private final String tagname;
     private final List<String> comicIds;
 
@@ -20,8 +21,9 @@ public class ComicListImpl implements ComicList {
      * @param comicListItem the comic list item
      */
     ComicListImpl(Item comicListItem) {
-        tagname = comicListItem.getName();
-        String orderingStr = getOrderingAttribute(comicListItem);
+        id = comicListItem.getName();
+        tagname = getAttribute(comicListItem, "tagname");
+        String orderingStr = getAttribute(comicListItem, "ordering");
         if (!orderingStr.startsWith("L:")) {
             throw new RuntimeException("Only explicit list orderings are supported now (item '" +
                     comicListItem.getName() + "').");
@@ -30,21 +32,28 @@ public class ComicListImpl implements ComicList {
     }
 
     /**
-     * Returns the ordering attribute or raises an exception if there isn't one.
+     * Returns the specified attribute or raises an exception if there isn't one.
      * @param comicListItem the comicListItem
+     * @param attributeName the name of the attribute to retrieve
      * @return the ordering attribute
      */
-    private String getOrderingAttribute(Item comicListItem) {
+    private String getAttribute(Item comicListItem, String attributeName) {
         for (Attribute attribute : comicListItem.getAttributes()) {
-            if ("ordering".equals(attribute.getName())) {
+            if (attributeName.equals(attribute.getName())) {
                 return attribute.getValue();
             }
         }
-        throw new RuntimeException("Comic List '" + comicListItem.getName() + "' has no ordering.");
+        throw new RuntimeException("Comic List '" + comicListItem.getName() +
+                "' does not have the attribute '" + attributeName + "'.");
     }
 
     @Override
-    public String getTagName() {
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public String getTagname() {
         return tagname;
     }
 

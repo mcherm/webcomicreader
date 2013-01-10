@@ -10,10 +10,17 @@ import java.util.List;
 public interface ComicList extends Iterable<String> {
 
     /**
+     * Returns an ID for the ComicList.
+     *
+     * @return the Id for the ComicList
+     */
+    public String getId();
+
+    /**
      * The name of the comic list.
      *
      * @return the tag name of the comic list
      */
-    public String getTagName();
+    public String getTagname();
 
 }

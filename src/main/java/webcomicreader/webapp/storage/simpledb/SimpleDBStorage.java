@@ -16,10 +16,9 @@ import com.amazonaws.services.simpledb.model.SelectRequest;
 import com.amazonaws.services.simpledb.model.SelectResult;
 import webcomicreader.webapp.model.ComicList;
 import webcomicreader.webapp.model.UserComic;
+import webcomicreader.webapp.storage.ComicListSetter;
 import webcomicreader.webapp.storage.StorageFacade;
 import webcomicreader.webapp.storage.UserComicSetter;
-import webcomicreader.webapp.storage.simpledb.ComicListImpl;
-import webcomicreader.webapp.storage.simpledb.UserComicImpl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -92,9 +91,11 @@ public class SimpleDBStorage implements StorageFacade {
             client.batchPutAttributes(new BatchPutAttributesRequest(COMICLIST_DOMAIN, Arrays.asList(
                     // Keys are "<user-id>-<tagname>"
                     new ReplaceableItem("1-all", Arrays.asList(
+                            new ReplaceableAttribute("tagname", "all", true),
                             new ReplaceableAttribute("ordering", "L:1 3 2", true)
                     )),
                     new ReplaceableItem("1-reading", Arrays.asList(
+                            new ReplaceableAttribute("tagname", "reading", true),
                             new ReplaceableAttribute("ordering", "L:2 3", true)
                     ))
             )));
@@ -136,7 +137,7 @@ public class SimpleDBStorage implements StorageFacade {
      * @param userComicId the user-comic-id
      * @return the comic-id
      */
-    private String getComicId(String userComicId) {
+    public static String getComicId(String userComicId) {
         return userComicId.substring(userComicId.indexOf('-') + 1, userComicId.length());
     }
 
@@ -178,6 +179,11 @@ public class SimpleDBStorage implements StorageFacade {
     public void updateUserComic(UserComicSetter userComic) {
         updateSeveralFields(USER_COMIC_DOMAIN, userComic.getId(), userComic.getUserComicFields());
         updateSeveralFields(COMIC_DOMAIN, userComic.getComicId(), userComic.getComicFields());
+    }
+
+    @Override
+    public void updateComicList(ComicListSetter comicList) {
+        updateSeveralFields(COMICLIST_DOMAIN, comicList.getId(), comicList.getComicListFields());
     }
 
     public void updateSeveralFields(String domain, String id, Map<String, String> fieldsToUpdate) {

@@ -31,6 +31,14 @@ public interface StorageFacade {
      */
     public Collection<ComicList> getComicListsForUser(String userId);
 
+    /**
+     * Updates all values in a ComicList to match the values passed in.
+     * Things not existing are created.
+     *
+     * @param comicList the data for the new or modified ComicList.
+     */
+    public void updateComicList(ComicListSetter comicList);
+
 
     /**
      * Returns all UserComics for a given user.

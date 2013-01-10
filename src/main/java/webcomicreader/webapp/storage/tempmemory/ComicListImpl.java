@@ -9,20 +9,27 @@ import java.util.List;
  * Implementation of ComicList for temp memory.
  */
 public class ComicListImpl implements ComicList {
-    private final String tagName;
+    private final String id;
+    private final String tagname;
     private final List<String> comics;
 
     /**
      * Implementation of ComicList for tempmemory.
      */
-    public ComicListImpl(String tagName, List<String> comics) {
-        this.tagName = tagName;
+    public ComicListImpl(String id, String tagname, List<String> comics) {
+        this.id = id;
+        this.tagname = tagname;
         this.comics = comics;
     }
 
     @Override
-    public String getTagName() {
-        return tagName;
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public String getTagname() {
+        return tagname;
     }
 
     @Override

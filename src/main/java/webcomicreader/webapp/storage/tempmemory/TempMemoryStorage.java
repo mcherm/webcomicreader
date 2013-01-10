@@ -6,6 +6,7 @@ import com.amazonaws.services.simpledb.model.ReplaceableAttribute;
 import com.amazonaws.services.simpledb.model.ReplaceableItem;
 import webcomicreader.webapp.model.ComicList;
 import webcomicreader.webapp.model.UserComic;
+import webcomicreader.webapp.storage.ComicListSetter;
 import webcomicreader.webapp.storage.StorageFacade;
 import webcomicreader.webapp.storage.UserComicSetter;
 
@@ -48,10 +49,8 @@ public class TempMemoryStorage implements StorageFacade {
         userComics.add(new UserComicImpl("1-3", comics.get(2), "http://www.girlgeniusonline.com/comic.php?date=20090911"));
 
         comicLists = new ArrayList<ComicListImpl>();
-        comicLists.add(new ComicListImpl("1-all", Arrays.asList("1","3","2")));
-        comicLists.add(new ComicListImpl("1-reading", Arrays.asList("2","3")));
-
-        // --- xxx ---
+        comicLists.add(new ComicListImpl("1-all", "all", Arrays.asList("1","3","2")));
+        comicLists.add(new ComicListImpl("1-reading", "all", Arrays.asList("2","3")));
 
     }
 
@@ -102,6 +101,7 @@ public class TempMemoryStorage implements StorageFacade {
             if (data.getComicId().equals(comics.get(i).getId())) {
                 comics.set(i, newComic);
                 storedComic = true;
+                break;
             }
         }
         if (!storedComic) {
@@ -113,10 +113,32 @@ public class TempMemoryStorage implements StorageFacade {
             if (data.getId().equals(userComics.get(i).getId())) {
                 userComics.set(i, newUserComic);
                 storedUserComic = true;
+                break;
             }
         }
         if (!storedUserComic) {
             userComics.add(newUserComic);
+        }
+    }
+
+    @Override
+    public void updateComicList(ComicListSetter data) {
+        List<String> comics = new ArrayList<String>();
+        for (String comicId : data) {
+            comics.add(comicId);
+        }
+        ComicListImpl newComicList = new ComicListImpl(data.getId(), data.getTagname(), comics);
+
+        boolean storedComicList = false;
+        for (int i=0; i<comicLists.size(); i++) {
+            if (newComicList.getId().equals(comicLists.get(i).getId())) {
+                comicLists.set(i, newComicList);
+                storedComicList = true;
+                break;
+            }
+        }
+        if (!storedComicList) {
+            comicLists.add(newComicList);
         }
     }
 }

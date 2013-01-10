@@ -35,7 +35,6 @@ public class EditComicController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
     public String updateComic(@PathVariable String id, @RequestBody MultiValueMap<String,String> fields) {
-        System.out.println("DOING POST");
         storage.updateUserComic(new UserComicSetter(id, fields));
         return "redirect:/viewComic/{id}";
     }

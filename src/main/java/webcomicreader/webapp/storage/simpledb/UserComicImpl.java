@@ -31,6 +31,11 @@ public class UserComicImpl implements UserComic {
         return userComicItemId;
     }
 
+    @Override
+    public String getComicId() {
+        return SimpleDBStorage.getComicId(userComicItemId);
+    }
+
     /**
      * A private method for dumping contents.
      */
