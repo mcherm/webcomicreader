@@ -1,6 +1,7 @@
 package webcomicreader.webapp.storage.tempmemory;
 
 import webcomicreader.webapp.model.ComicList;
+import webcomicreader.webapp.model.ObjectWithId;
 import webcomicreader.webapp.model.UserComic;
 import webcomicreader.webapp.storage.ComicListSetter;
 import webcomicreader.webapp.storage.StorageFacade;
@@ -88,29 +89,8 @@ public class TempMemoryStorage implements StorageFacade {
         ComicImpl newComic = new ComicImpl(data.getComicId(), data.getName(), data.getHomepageURL());
         UserComicImpl newUserComic = new UserComicImpl(data.getId(), newComic, data.getCurrentPositionURL());
 
-        boolean storedComic = false;
-        for (int i=0; i<comics.size(); i++) {
-            if (data.getComicId().equals(comics.get(i).getId())) {
-                comics.set(i, newComic);
-                storedComic = true;
-                break;
-            }
-        }
-        if (!storedComic) {
-            comics.add(newComic);
-        }
-
-        boolean storedUserComic = false;
-        for (int i=0; i<userComics.size(); i++) {
-            if (data.getId().equals(userComics.get(i).getId())) {
-                userComics.set(i, newUserComic);
-                storedUserComic = true;
-                break;
-            }
-        }
-        if (!storedUserComic) {
-            userComics.add(newUserComic);
-        }
+        updateOrAdd(comics, newComic);
+        updateOrAdd(userComics, newUserComic);
     }
 
     @Override
@@ -121,16 +101,48 @@ public class TempMemoryStorage implements StorageFacade {
         }
         ComicListImpl newComicList = new ComicListImpl(data.getId(), data.getTagname(), comics);
 
-        boolean storedComicList = false;
-        for (int i=0; i<comicLists.size(); i++) {
-            if (newComicList.getId().equals(comicLists.get(i).getId())) {
-                comicLists.set(i, newComicList);
-                storedComicList = true;
-                break;
+        updateOrAdd(comicLists, newComicList);
+    }
+
+    @Override
+    public void updateUserComicCurrentPosition(String userComicId, String currentPosition) {
+        UserComic userComic = findInList(userComics, userComicId);
+        ComicImpl comic = findInList(comics, userComic.getComicId());
+        UserComicImpl newUserComic = new UserComicImpl(userComicId, comic, currentPosition);
+        updateOrAdd(userComics, newUserComic);
+    }
+
+    /**
+     * Finds the item in the list with the given ID, or returns null if no item in the
+     * list has that ID.
+     *
+     * @param list the list to search
+     * @param id the ID to look for
+     * @return the value with that ID or else null if no value with that ID is in the list
+     */
+    private <T extends ObjectWithId> T findInList(List<T> list, String id) {
+        for (int i=0; i<list.size(); i++) {
+            if (id.equals(list.get(i).getId())) {
+                return list.get(i);
             }
         }
-        if (!storedComicList) {
-            comicLists.add(newComicList);
+        return null;
+    }
+
+    /**
+     * Given a value, finds the one with the same ID in the list given and replaces it, or
+     * if none with the same ID is in the list then this is added to the end of the list.
+     *
+     * @param list the list to search
+     * @param newValue the new value to use
+     */
+    private <T extends ObjectWithId> void updateOrAdd(List<T> list, T newValue) {
+        for (int i=0; i<list.size(); i++) {
+            if (newValue.getId().equals(list.get(i).getId())) {
+                list.set(i, newValue);
+                return;
+            }
         }
+        list.add(newValue);
     }
 }

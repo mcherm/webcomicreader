@@ -44,11 +44,6 @@ public class UserComicImpl implements UserComic {
     }
 
     @Override
-    public String getObjectType() {
-        return SimpleDBStorage.COMIC_DOMAIN;
-    }
-
-    @Override
     public String getName() {
         return fields.get("name");
     }

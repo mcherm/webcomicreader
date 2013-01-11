@@ -41,8 +41,4 @@ public class UserComicImpl implements UserComic {
         return comic.getId();
     }
 
-    @Override
-    public String getObjectType() {
-        throw new RuntimeException("Not implemented");
-    }
 }

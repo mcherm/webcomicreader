@@ -34,8 +34,4 @@ public class ComicImpl implements Comic {
         return id;
     }
 
-    @Override
-    public String getObjectType() {
-        throw new RuntimeException("Not implemented");
-    }
 }

@@ -12,11 +12,4 @@ public interface ObjectWithId {
      * @return the ID of the object.
      */
     String getId();
-
-    /**
-     * Returns a "type" for the object.
-     * @return a string representing the "type" of the object.
-     */
-    String getObjectType();
-
 }

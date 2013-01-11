@@ -1,9 +1,11 @@
 package webcomicreader.webapp.storage.tempmemory;
 
+import webcomicreader.webapp.model.ObjectWithId;
+
 /**
  * Implementation of User for tempmemory.
  */
-public class UserImpl {
+public class UserImpl implements ObjectWithId {
     private final String id;
     private final String username;
 

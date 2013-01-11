@@ -7,7 +7,7 @@ import java.util.List;
  * This is a model object for an ordered set of comics.
  * Iterating it gives a list of the IDs of the comics.
  */
-public interface ComicList extends Iterable<String> {
+public interface ComicList extends Iterable<String>, ObjectWithId {
 
     /**
      * Returns an ID for the ComicList.

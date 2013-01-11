@@ -26,6 +26,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * An implementation of storage using Amazon SimpleDB and my (hardcoded) API keys.
@@ -186,7 +187,13 @@ public class SimpleDBStorage implements StorageFacade {
         updateSeveralFields(COMICLIST_DOMAIN, comicList.getId(), comicList.getComicListFields());
     }
 
-    public void updateSeveralFields(String domain, String id, Map<String, String> fieldsToUpdate) {
+    @Override
+    public void updateUserComicCurrentPosition(String userComicId, final String currentPosition) {
+        updateSeveralFields(USER_COMIC_DOMAIN, userComicId,
+                new TreeMap<String,String>() {{put("currentPosition", currentPosition);}});
+    }
+
+    private void updateSeveralFields(String domain, String id, Map<String, String> fieldsToUpdate) {
         List<ReplaceableAttribute> attributes = new ArrayList<ReplaceableAttribute>(fieldsToUpdate.size());
         for (Map.Entry<String, String> fieldEntry : fieldsToUpdate.entrySet()) {
             attributes.add(new ReplaceableAttribute(fieldEntry.getKey(), fieldEntry.getValue(), true));

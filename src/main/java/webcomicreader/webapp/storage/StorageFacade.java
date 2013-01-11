@@ -63,4 +63,9 @@ public interface StorageFacade {
      */
     public void updateUserComic(UserComicSetter userComic);
 
+    /**
+     * This updates just one field (the currentPosition field) in a UserComic.
+     */
+    public void updateUserComicCurrentPosition(String userComicId, String currentPosition);
+
 }

@@ -70,12 +70,6 @@ public class UserComicSetter implements UserComic {
         return id;
     }
 
-    @Override
-    public String getObjectType() {
-        // FIXME: I think this method shouldn't be needed at all
-        return null;
-    }
-
     /**
      * Method used for writing this to the DB.
      * @return the ID of the corresponding comic.
