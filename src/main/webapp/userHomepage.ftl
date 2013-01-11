@@ -40,7 +40,7 @@
             <#list comicListComics[comicList.id] as userComic>
             <li class="ui-state-default">
                 <span class="ui-icon ui-icon-arrowthick-2-n-s sort-handle">X</span>
-                <a href="/viewComic/${userComic.id}">${userComic.name}</a>
+                <a href="/viewComic/${userId}/${userComic.comicId}">${userComic.name}</a>
                 <span class="hidden comicId">${userComic.comicId}</span>
             </li>
             </#list>

@@ -27,6 +27,8 @@ public class UserHomepageController {
 
     @RequestMapping("/userHomepage/{userId}")
     public String comicList(@PathVariable String userId, Model model) {
+        model.addAttribute("userId", userId);
+
         Collection<ComicList> comicLists = storage.getComicListsForUser(userId);
         Map<String,UserComic> allUserComics = storage.getUserComicsForUser(userId);
         model.addAttribute("comicLists", comicLists);

@@ -14,11 +14,11 @@
     <!-- Add new DAOs here -->
 
     <!-- Add new Managers here -->
+    <!--
     <bean id="storage" class="webcomicreader.webapp.storage.simpledb.SimpleDBStorage">
         <constructor-arg name="accessKey" value="${webcomicreader.simpledb.accessKey}"/>
         <constructor-arg name="secretKey" value="${webcomicreader.simpledb.secretKey}"/>
     </bean>
-    <!--
-    <bean id="storage" class="webcomicreader.webapp.storage.tempmemory.TempMemoryStorage"/>
     -->
+    <bean id="storage" class="webcomicreader.webapp.storage.tempmemory.TempMemoryStorage"/>
 </beans>

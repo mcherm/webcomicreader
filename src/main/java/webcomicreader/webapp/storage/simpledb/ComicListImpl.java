@@ -61,4 +61,9 @@ public class ComicListImpl implements ComicList {
     public Iterator<String> iterator() {
         return comicIds.iterator();
     }
+
+    @Override
+    public boolean comicInList(String comicId) {
+        return comicIds.contains(comicId);
+    }
 }

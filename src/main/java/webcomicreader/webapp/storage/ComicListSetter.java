@@ -52,4 +52,14 @@ public class ComicListSetter implements ComicList {
             put("ordering", "L:" + itemsInOrder);
         }};
     }
+
+    @Override
+    public boolean comicInList(String comicId) {
+        for (String x : this) {
+            if (comicId.equals(x)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

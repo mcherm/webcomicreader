@@ -23,4 +23,13 @@ public interface ComicList extends Iterable<String> {
      */
     public String getTagname();
 
+
+    /**
+     * Returns true if the given comic is in this list; false if it is not.
+     *
+     * @param comicId A comic id (not user-comic id).
+     * @return true or false;
+     */
+    public boolean comicInList(String comicId);
+
 }
