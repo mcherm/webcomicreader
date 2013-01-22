@@ -1,9 +1,20 @@
 <head>
     <style>
+        .hidden {display: none;};
         hr {height: 4px; width: 4px; };
-        ul.sortable { margin: 0; padding: 0; width: 60%; }
-        ul.sortable li { list-style-type: none; margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
-        ul.sortable li span.ui-icon { position: absolute; margin-left: -1.3em; }
+        ul.comicList-mini { margin: 0; padding: 0; width: 60%; }
+        ul.comicList-mini li {
+            list-style-type: none;
+            margin: 0 3px 3px 3px;
+            padding: 0.4em;
+            padding-left: 1.5em;
+            font-size: 1.4em;
+            height: 18px;
+        }
+        ul.comicList-mini li span.ui-icon {
+            position: absolute;
+            margin-left: -1.3em;
+        }
     </style>
     <script type="text/javascript">
         $(function() {
@@ -34,16 +45,22 @@
     <#list comicLists as comicList>
     <div class="comicList">
         <div class="comicListName">${comicList.tagname}</div>
-        <ul class="sortable">
+        <ul class="sortable comicList-mini">
             <span class="hidden comicListId">${comicList.id}</span>
             <span class="hidden tagname">${comicList.tagname}</span>
             <#list comicListComics[comicList.id] as userComic>
             <li class="ui-state-default">
-                <span class="ui-icon ui-icon-arrowthick-2-n-s sort-handle">X</span>
+                <span class="ui-icon ui-icon-arrowthick-2-n-s sort-handle"></span>
                 <a href="/viewComic/${userId}/${userComic.comicId}">${userComic.name}</a>
                 <span class="hidden comicId">${userComic.comicId}</span>
             </li>
             </#list>
+        </ul>
+        <ul class="comicList-mini">
+            <li>
+                <span class="ui-icon ui-icon-plusthick"></span>
+                <a class="new-comic" href="/newComic/${userId}?addToList=${comicList.tagname?url('UTF-8')}">add new comic</a>
+            </li>
         </ul>
     </div>
     </#list>

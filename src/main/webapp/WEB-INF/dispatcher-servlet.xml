@@ -65,5 +65,6 @@
         <property name="requestContextAttribute" value="rc"/>
         <property name="prefix" value="/"/>
         <property name="suffix" value=".ftl"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
     </bean>
 </beans>
