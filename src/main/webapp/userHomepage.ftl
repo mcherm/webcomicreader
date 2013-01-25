@@ -59,7 +59,7 @@
         <ul class="comicList-mini">
             <li>
                 <span class="ui-icon ui-icon-plusthick"></span>
-                <a class="new-comic" href="/newComic/${userId}?addToList=${comicList.tagname?url('UTF-8')}">add new comic</a>
+                <a class="new-comic" href="/newUserComic/${userId}?addToLists=${comicList.tagname?url('UTF-8')}">add new comic</a>
             </li>
         </ul>
     </div>

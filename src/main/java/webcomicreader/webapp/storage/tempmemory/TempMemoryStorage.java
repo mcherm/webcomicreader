@@ -94,6 +94,37 @@ public class TempMemoryStorage implements StorageFacade {
     }
 
     @Override
+    public String createOrFindComic(String name, String homepage) {
+        int biggestNumericId = 1; // if we don't find something bigger, use 1
+        for (ComicImpl comic : comics) {
+            if (comic.getName().equals(name) && comic.getHomepageURL().equals(homepage)) {
+                return comic.getId();
+            } else {
+                try {
+                    int idAsNum = Integer.parseInt(comic.getId());
+                    if (idAsNum > biggestNumericId) {
+                        biggestNumericId = idAsNum;
+                    }
+                } catch(NumberFormatException err) {
+                    // Safely ignore this
+                }
+            }
+        }
+
+        String newId = Integer.toString(biggestNumericId + 1);
+        updateOrAdd(comics, new ComicImpl(newId, name, homepage));
+        return newId;
+    }
+
+    @Override
+    public void createOrUpdateUserComic(String userId, String comicId, String currentPosition) {
+        String userComicId = userId + "-" + comicId;
+        ComicImpl comic = findInList(comics, comicId);
+        UserComicImpl newUserComic = new UserComicImpl(userComicId, comic, currentPosition);
+        updateOrAdd(userComics, newUserComic);
+    }
+
+    @Override
     public void updateComicList(ComicListSetter data) {
         List<String> comics = new ArrayList<String>();
         for (String comicId : data) {

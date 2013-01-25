@@ -58,10 +58,32 @@ public interface StorageFacade {
     /**
      * Updates all values in a UserComic and also in the corresponding Comic to match
      * the values passed in. Things not existing are created.
+     * <p>
+     * FIXME: May need to change the name; this updates UserComic *AND* the Comic also.
      *
      * @param userComic the values to use.
      */
     public void updateUserComic(UserComicSetter userComic);
+
+    /**
+     * This is passed the main fields of a Comic, and it either finds the
+     * ID of the corresponding Comic or else it creates a new comic and
+     * returns that ID.
+     *
+     * @param name the name of the Comic
+     * @param homepage the URL of the homepage of the comic
+     * @return the comicId of the found or created Comic
+     */
+    public String createOrFindComic(String name, String homepage);
+
+    /**
+     * This either creates or modifies a UserComic.
+     *
+     * @param userId the id of the user
+     * @param comicId the id of the comic
+     * @param currentPosition the current position (url)
+     */
+    public void createOrUpdateUserComic(String userId, String comicId, String currentPosition);
 
     /**
      * This updates just one field (the currentPosition field) in a UserComic.
