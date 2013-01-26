@@ -39,6 +39,9 @@ public class SimpleDBStorage implements StorageFacade {
     public final static String COMIC_DOMAIN = "comic";
     public final static String USER_COMIC_DOMAIN = "usercomic";
     public final static String COMICLIST_DOMAIN = "comiclist";
+    public final static String[] ALL_DOMAINS = {
+            ID_COUNT_DOMAIN, USER_DOMAIN, COMIC_DOMAIN, USER_COMIC_DOMAIN, COMICLIST_DOMAIN};
+
 
     private final IdGenerator idGenerator;
     private final AmazonSimpleDB client;
@@ -124,10 +127,9 @@ public class SimpleDBStorage implements StorageFacade {
         String selectExpression = "select * from " + USER_COMIC_DOMAIN + " limit 100";
         SelectRequest selectRequest = new SelectRequest(selectExpression, false);
         SelectResult selectResult = client.select(selectRequest);
-        List<Item> items = selectResult.getItems();
-        for (Item userComicItem : items) {
+        for (Item userComicItem : selectResult.getItems()) {
             String userComicId = userComicItem.getName();
-            List<Attribute> comicAttributes = comicAttributes(userComicId, userComicItem.getAttributes());
+            List<Attribute> comicAttributes = comicAttributes(userComicId);
             result.add(new UserComicImpl(userComicId, comicAttributes,  userComicItem.getAttributes()));
         }
         String nextToken = selectResult.getNextToken();
@@ -140,7 +142,7 @@ public class SimpleDBStorage implements StorageFacade {
     /**
      * Given a userComic item, this finds the attributes of the corresponding comic.
      */
-    private List<Attribute> comicAttributes(String userComicId, List<Attribute> userComicAttributes) {
+    private List<Attribute> comicAttributes(String userComicId) {
         String comicId = getComicId(userComicId);
         return client.getAttributes(new GetAttributesRequest(COMIC_DOMAIN, comicId)).getAttributes();
     }
@@ -158,7 +160,7 @@ public class SimpleDBStorage implements StorageFacade {
     @Override
     public UserComic getUserComic(String userComicId) {
         List<Attribute> userComicAttributes = client.getAttributes(new GetAttributesRequest(USER_COMIC_DOMAIN, userComicId)).getAttributes();
-        List<Attribute> comicAttributes = comicAttributes(userComicId, userComicAttributes);
+        List<Attribute> comicAttributes = comicAttributes(userComicId);
         return new UserComicImpl(userComicId, comicAttributes, userComicAttributes);
     }
 
@@ -265,4 +267,75 @@ public class SimpleDBStorage implements StorageFacade {
         )));
     }
 
+
+    /* FIXME: Remove this example
+{
+    "domain_data": {
+        "comic": [
+            {
+                "id": "1",
+                "name": "XKCD",
+                "homepage": "https://www.xkcd.com/"
+            },
+            {
+                "id": "1",
+                "name": "Schlock Mercenary",
+                "homepage": "http://www.schlockmercenary.com/"
+            }
+        ]
+    }
+}
+     */
+
+    @Override
+    public String dumpdb() {
+        StringBuilder result = new StringBuilder();
+        result.append("{\n    \"domain_data\": {");
+        boolean firstDomain = true;
+        for (String domain : ALL_DOMAINS) {
+            if (firstDomain) {
+                firstDomain = false;
+            } else {
+                result.append(",");
+            }
+            result.append("\n        \"" + domain + "\": [");
+            String selectExpression = "select * from " + domain + " limit 100";
+            SelectResult selectResult = client.select(new SelectRequest(selectExpression, false));
+            String nextToken = selectResult.getNextToken();
+            if (nextToken != null) {
+                throw new RuntimeException("Code not implemented for lists too large to read in one chunk.");
+            }
+            boolean firstItem = true;
+            for (Item item : selectResult.getItems()) {
+                if (firstItem) {
+                    firstItem = false;
+                } else {
+                    result.append(",");
+                }
+                result.append("\n            {\n                \"id\": \"");
+                result.append(item.getName());
+                result.append("\"");
+                for (Attribute attribute : item.getAttributes()) {
+                    result.append(",\n                \"");
+                    result.append(JSONStrEscape(attribute.getName()));
+                    result.append("\": \"");
+                    result.append(JSONStrEscape(attribute.getValue()));
+                    result.append("\"");
+                }
+                result.append("\n            }");
+            }
+            result.append("\n        ]");
+        }
+        result.append("\n    }\n}\n");
+
+        return result.toString();
+    }
+
+
+    // FIXME: Use a real function instead of rolling my own. Or at least write my own better.
+    private String JSONStrEscape(String s) {
+        s = s.replace("\\","\\\\");
+        s = s.replace("\"", "\\\"");
+        return s;
+    }
 }

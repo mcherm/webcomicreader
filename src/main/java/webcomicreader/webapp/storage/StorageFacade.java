@@ -90,4 +90,8 @@ public interface StorageFacade {
      */
     public void updateUserComicCurrentPosition(String userComicId, String currentPosition);
 
+    /**
+     * This dumps the contents of the database to a String (in JSON format).
+     */
+    public String dumpdb();
 }

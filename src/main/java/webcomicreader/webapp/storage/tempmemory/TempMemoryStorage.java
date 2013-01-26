@@ -176,4 +176,9 @@ public class TempMemoryStorage implements StorageFacade {
         }
         list.add(newValue);
     }
+
+    @Override
+    public String dumpdb() {
+        return "No need to dump TempMemoryStorage.";
+    }
 }
