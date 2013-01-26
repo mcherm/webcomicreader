@@ -4,17 +4,11 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.simpledb.AmazonSimpleDB;
 import com.amazonaws.services.simpledb.AmazonSimpleDBClient;
-import com.amazonaws.services.simpledb.model.Attribute;
-import com.amazonaws.services.simpledb.model.BatchPutAttributesRequest;
-import com.amazonaws.services.simpledb.model.CreateDomainRequest;
-import com.amazonaws.services.simpledb.model.GetAttributesRequest;
-import com.amazonaws.services.simpledb.model.GetAttributesResult;
-import com.amazonaws.services.simpledb.model.Item;
-import com.amazonaws.services.simpledb.model.PutAttributesRequest;
-import com.amazonaws.services.simpledb.model.ReplaceableAttribute;
-import com.amazonaws.services.simpledb.model.ReplaceableItem;
-import com.amazonaws.services.simpledb.model.SelectRequest;
-import com.amazonaws.services.simpledb.model.SelectResult;
+import com.amazonaws.services.simpledb.model.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import webcomicreader.webapp.model.ComicList;
 import webcomicreader.webapp.model.UserComic;
 import webcomicreader.webapp.storage.ComicListSetter;
@@ -268,25 +262,7 @@ public class SimpleDBStorage implements StorageFacade {
     }
 
 
-    /* FIXME: Remove this example
-{
-    "domain_data": {
-        "comic": [
-            {
-                "id": "1",
-                "name": "XKCD",
-                "homepage": "https://www.xkcd.com/"
-            },
-            {
-                "id": "1",
-                "name": "Schlock Mercenary",
-                "homepage": "http://www.schlockmercenary.com/"
-            }
-        ]
-    }
-}
-     */
-
+    // FIXME: Rewrite this to use GSON
     @Override
     public String dumpdb() {
         StringBuilder result = new StringBuilder();
@@ -338,4 +314,35 @@ public class SimpleDBStorage implements StorageFacade {
         s = s.replace("\"", "\\\"");
         return s;
     }
+
+    @Override
+    public void reloaddb(String jsonData) {
+        JsonParser parser = new JsonParser();
+        JsonObject o = (JsonObject)parser.parse(jsonData);
+        o.getAsJsonObject("domain_data");
+        for (Map.Entry<String, JsonElement> domainEntry : o.getAsJsonObject("domain_data").entrySet()) {
+            String domainName = domainEntry.getKey();
+            client.deleteDomain(new DeleteDomainRequest(domainName));
+            client.createDomain(new CreateDomainRequest(domainName));
+            JsonArray domainData = domainEntry.getValue().getAsJsonArray();
+
+            List<ReplaceableItem> newItems = new ArrayList<ReplaceableItem>();
+            for (JsonElement jsonEntity : domainData) {
+                String id = null;
+                List<ReplaceableAttribute> attributeList = new ArrayList<ReplaceableAttribute>();
+                for (Map.Entry<String, JsonElement> attributeEntry : jsonEntity.getAsJsonObject().entrySet()){
+                    String fieldName = attributeEntry.getKey();
+                    if (fieldName.equals("id")) {
+                        id = attributeEntry.getValue().getAsJsonPrimitive().getAsString();
+                    } else {
+                        String fieldValue = attributeEntry.getValue().getAsJsonPrimitive().getAsString();
+                        attributeList.add(new ReplaceableAttribute(fieldName, fieldValue, true));
+                    }
+                }
+                newItems.add(new ReplaceableItem(id, attributeList));
+            }
+            client.batchPutAttributes(new BatchPutAttributesRequest(domainName, newItems));
+        }
+    }
+
 }

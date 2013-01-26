@@ -94,4 +94,10 @@ public interface StorageFacade {
      * This dumps the contents of the database to a String (in JSON format).
      */
     public String dumpdb();
+
+    /**
+     * This takes a string with a dump of the database and uses it to reload
+     * the entire database. Any existing content is deleted in this process.
+     */
+    public void reloaddb(String jsonData);
 }

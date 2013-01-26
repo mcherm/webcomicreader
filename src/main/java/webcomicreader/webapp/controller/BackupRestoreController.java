@@ -17,8 +17,11 @@ package webcomicreader.webapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import webcomicreader.webapp.storage.StorageFacade;
 
 import javax.servlet.http.HttpServletResponse;
@@ -36,19 +39,6 @@ public class BackupRestoreController {
     @Autowired
     private StorageFacade storage;
 
-// FIXME: Remove this
-//    /**
-//     * Downloads the entire contents of the database in a json format.
-//     */
-//    @RequestMapping(value = "/dumpdb", method = RequestMethod.GET)
-//    public String dumpDatabase(Model model)
-//    {
-//        String dumpdbStr = storage.dumpdb();
-//        model.addAttribute("dumpdb", dumpdbStr);
-//        return "dumpdb";
-//    }
-
-
     /**
      * Downloads the entire contents of the database in a json format.
      */
@@ -62,4 +52,23 @@ public class BackupRestoreController {
         response.getWriter().write(dumpdbStr);
     }
 
+
+    @RequestMapping(value = "/loaddb", method = RequestMethod.GET)
+    public String uploadScreen() {
+        return "loaddb";
+    }
+
+    @RequestMapping(value = "/uploadToDb", method = RequestMethod.POST)
+    public String uploadToDatabase(@RequestParam("file") MultipartFile file, Model model) throws IOException {
+        boolean successful;
+        if (!file.isEmpty()) {
+            String fileStr = new String(file.getBytes(), "UTF-8");
+            storage.reloaddb(fileStr);
+            successful = true;
+        } else {
+            successful = false;
+        }
+        model.addAttribute("successful", successful);
+        return "loaddbResults";
+    }
 }

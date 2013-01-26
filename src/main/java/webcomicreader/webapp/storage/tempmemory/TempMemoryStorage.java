@@ -181,4 +181,9 @@ public class TempMemoryStorage implements StorageFacade {
     public String dumpdb() {
         return "No need to dump TempMemoryStorage.";
     }
+
+    @Override
+    public void reloaddb(String jsonData) {
+        throw new RuntimeException("No support for loading TempMemoryStorage.");
+    }
 }

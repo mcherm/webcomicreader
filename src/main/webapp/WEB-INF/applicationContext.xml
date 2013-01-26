@@ -11,6 +11,10 @@
     <!-- Activates scanning of @Repository and @Service -->
     <context:component-scan base-package="webcomicreader"/>
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="10000000"/>
+    </bean>
+
     <!-- Add new DAOs here -->
 
     <!-- Add new Managers here -->
